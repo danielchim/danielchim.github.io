@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - 10 # use nodejs v10 LTS
+  - 14 # use nodejs v14 LTS
 cache: npm
 branches:
   only:
@@ -10,10 +10,8 @@ before_script: ## 根据你所用的主题和自定义的不同，这里会有�
   - cd blog # 在 CI 环境内安装 Hexo
   - npm install -g hexo-cli # 在 CI 环境内安装 Hexo
   - cd themes
-  - git clone https://github.com/SukkaW/hexo-theme-suka.git suka #从 Github 上拉取 Suka 主题
   - cd suka
   - npm install --production # 安装 Suka 主题的依赖
-  - cp -i _config.example.yml _config.yml
   - cd ../../ # 返回站点根目录
   - npm install # 在根目录安装站点需要的依赖
 script:
